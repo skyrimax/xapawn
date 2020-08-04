@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Board.h"
+#include "Grid.h"
 #include "AbstractPlayer.h"
+#include "Square.h"
 
 class Game
 {
@@ -14,7 +15,20 @@ public:
 
 	virtual ~Game();
 
+	// Accesseurs
+	const Grid<int> previousState() const { return m_previousState; }
+	size_t nbRows() const { return m_board.nbRows(); }
+	size_t nbColumns() const { return m_board.nbCols(); }
+
 	Piece::Team playGame();
+
+	// Méthodes
+	Grid<int> state() const;
+	std::vector<Coordinate*> possibleMoves(const Coordinate& piece);
+	void addPiece(Piece* piece, const Coordinate& pos);
+	void movePiece(Coordinate start, Coordinate end);
+	void removePiece(Coordinate piece);
+	void updatePrviousState() { m_previousState = state(); }
 
 protected:
 	struct Player {
@@ -34,7 +48,8 @@ protected:
 
 	void changePlayer();
 
-	Board m_board;
+	Grid<Square> m_board;
+	Grid<int> m_previousState;
 	int m_currentPlayer;
 	Player m_players[2];
 };

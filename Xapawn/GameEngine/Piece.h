@@ -11,12 +11,12 @@ class Board;
 class Piece
 {
 public:
-	enum class Team {
+	enum class Team : int{
 		White=0,
 		Black=1
 	};
 
-	enum class Type {
+	enum class Type : int{
 		King=0,
 		Queen=1,
 		Rook=2,
@@ -35,6 +35,7 @@ public:
 	const Coordinate& pos() const;
 
 	void movePiece(Coordinate newPos);
+	virtual void removePiece() = 0;
 
 	// Virtual fonction returning a list of possible moving positions
 	virtual std::vector<Coordinate*>& possibleMoves()=0;

@@ -23,8 +23,8 @@ public:
 	Grid<T>& operator=(Grid<T>&& grid);
 
 	//Capacity related member functions
-	size_type nbRows();
-	size_type nbCols();
+	size_type nbRows() const;
+	size_type nbCols() const;
 	void resize(size_type nbRows, size_type nbCols);
 	void resize(size_type nbRows, size_type nbCols, T& val);
 	bool empty();

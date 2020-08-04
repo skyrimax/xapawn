@@ -124,7 +124,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractPlayer.cpp" />
-    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Pawn.cpp" />
@@ -133,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractPlayer.h" />
-    <ClInclude Include="Board.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Grid.h" />

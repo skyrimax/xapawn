@@ -71,13 +71,13 @@ Grid<T>& Grid<T>::operator=(Grid<T>&& grid)
 }
 
 template<class T>
-typename Grid<T>::size_type Grid<T>::nbRows()
+typename Grid<T>::size_type Grid<T>::nbRows() const
 {
 	return m_nbRows;
 }
 
 template<class T>
-typename Grid<T>::size_type Grid<T>::nbCols()
+typename Grid<T>::size_type Grid<T>::nbCols() const
 {
 	return m_nbCols;
 }

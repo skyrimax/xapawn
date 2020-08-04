@@ -4,6 +4,7 @@
 #include<initializer_list>
 
 #include"Piece.h"
+#include"Grid.h"
 
 class AbstractPlayer
 {
@@ -30,7 +31,7 @@ public:
 	void removePiece(Piece* piece);
 
 	// Méthod to play a turn using function pointer
-	virtual void playTurn(const Board& board, Coordinate& start, Coordinate& end) = 0;
+	virtual void playTurn(const Grid<int>& currentState, const Grid<int>& previousState, Coordinate& start, Coordinate& end) = 0;
 
 private:
 	Piece::Team m_team;
